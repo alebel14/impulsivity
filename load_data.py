@@ -19,6 +19,7 @@ def load_clean_data():
 
     bad_trials = np.where(block==0)[0]
     more_bad = np.where(np.nan_to_num(rt)<=200)[0]
+    bad_subj = np.where(subj==1)[0]
     bad_idx = np.append(bad_trials, more_bad)
     print(f'{(bad_idx.shape[0]/subj.shape[0])*100:.2f} percent trials removed')
 
